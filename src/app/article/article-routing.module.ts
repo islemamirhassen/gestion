@@ -6,6 +6,11 @@ import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   {
+  path: '',
+  redirectTo: 'article/home',
+  pathMatch: 'full'
+ },
+  {
     path: 'article/home',
     component: HomeComponent,
   },

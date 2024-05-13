@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     CommonModule,
     ArticleRoutingModule,
-    ArticleModule,
     FormsModule
-  ]
+  ],
+  providers:[ArticleService]
 })
 export class ArticleModule { }
