@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit {
   deleteModal: any;
 
  
-  constructor(private fruitService: ArticleService) {}
+  constructor(private articleService: ArticleService) {}
  
   ngOnInit(): void {
     this.get();
   }
  
   get() {
-    this.ArticleService.get().subscribe((data: Article[]) => {console.log(data);
+    this.articleService.get().subscribe((data: Article[]) => {console.log(data);
       this.allArticle = data;
     });
   }
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
  
   delete() {
-    this.ArticleService.delete(this.idTodelete).subscribe({
+    this.articleService.delete(this.idTodelete).subscribe({
       next: (data: any) => {
         this.allArticle = this.allArticle.filter(_ => _.id != this.idTodelete)
         this.deleteModal.hide();
